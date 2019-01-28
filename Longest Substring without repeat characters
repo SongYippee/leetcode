@@ -11,3 +11,19 @@ l = len(s)
                     sub = s[j:j+i]
                     if len(set(sub)) == i:
                         return i
+                        
+                        
+                        
+                        
+# Algorithm 2
+
+start = end = 0
+ans = 0
+dic = {}
+while start <= end < len(s):
+    if s[end] in dic:
+        start = max(dic[s[end]]+1,start)
+    dic[s[end]] = end
+    ans = max(ans,end - start+1)
+    end +=1
+return ans
