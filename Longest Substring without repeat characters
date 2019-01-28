@@ -1,0 +1,13 @@
+# Algorithms 1
+
+l = len(s)
+        sl = len(set(s))
+        
+        if sl <=2 or l == sl:
+            return sl
+        else:
+            for i in range(sl,2,-1):
+                for j in range(l-i+1):
+                    sub = s[j:j+i]
+                    if len(set(sub)) == i:
+                        return i
