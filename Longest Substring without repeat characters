@@ -27,3 +27,16 @@ while start <= end < len(s):
     ans = max(ans,end - start+1)
     end +=1
 return ans
+
+
+# Algorithm 3
+sub = ''
+        ans = 0
+        for char in s:
+            if char not in sub:
+                sub+=char
+                ans = max(ans,len(sub))
+            else:
+                dup = sub.find(char)
+                sub = sub[dup+1:]+char
+        return ans
