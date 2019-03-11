@@ -12,11 +12,22 @@ class TreeNode(object):
 
 
 def makeBST(data):
+    '''
+    用int数组构造 BST
+    :param data: int数组
+    :return: BST
+    '''
     if not data:
         return None
     head = TreeNode(data[0])
 
     def findChild(parent, subs):
+        '''
+        找出左右子节点的值
+        :param parent:
+        :param subs:
+        :return:
+        '''
         left = []
         right = []
         for i in range(len(subs)):
