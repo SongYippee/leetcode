@@ -18,3 +18,8 @@ class Solution(object):
         minutes = map(convert,timePoints)
         minutes.sort()
         return min((y - x)%(24*60) for x,y in zip(minutes,minutes[1:]+minutes[:1]))
+
+
+if __name__ == '__main__':
+    times = ["00:00","00:11","23:58"]
+    print Solution().findMinDifference(times)
