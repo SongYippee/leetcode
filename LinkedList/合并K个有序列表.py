@@ -1,3 +1,8 @@
+class ListNode(object):
+    def __init__(self,val):
+        self.val = val
+        self.next = None
+
 class Solution(object):
     def mergeKLists(self, lists):
         """
