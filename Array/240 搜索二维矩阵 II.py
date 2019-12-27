@@ -100,7 +100,35 @@ class Solution(object):
         return search(matrix, 0, total_rows - 1, 0, total_cols - 1, target)
 
 
+class Solution2(object):
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+        if not matrix:
+            return False
+        total_rows = len(matrix)
+        if total_rows == 0:
+            return False
+        total_cols = len(matrix[0])
+        if total_cols == 0:
+            return False
+
+        row, col = 0, total_cols - 1
+        while row < total_rows and col >= 0:
+            print "matrix[%d][%d]=%d" % (row, col, matrix[row][col])
+            if matrix[row][col] == target:
+                return True
+            elif matrix[row][col] > target:
+                col -= 1
+            else:
+                row += 1
+        return False
+
+
 if __name__ == '__main__':
     matrix = [[1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30]]
-    target = 29
-    print Solution().searchMatrix(matrix, target)
+    target = 18
+    print Solution2().searchMatrix(matrix, target)
