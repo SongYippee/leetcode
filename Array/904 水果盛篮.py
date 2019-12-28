@@ -53,7 +53,7 @@ class Solution(object):
             return 0
         N = len(tree)
         start, end = 0, 0
-        temp = set() # 存放水果类型，当类型大于 2 时，移除一个类型
+        temp = set()  # 存放水果类型，当类型大于 2 时，移除一个类型
         total_amount = 0
         while end < N:
             temp.add(tree[end])
@@ -78,6 +78,7 @@ class Solution(object):
             total_amount = end - start
         return total_amount
 
+
 if __name__ == '__main__':
-    tree = [4,1,1,1,3,1,7,5]
+    tree = [4, 1, 1, 1, 3, 1, 7, 5]
     print Solution().totalFruit(tree)
