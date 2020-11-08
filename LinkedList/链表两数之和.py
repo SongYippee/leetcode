@@ -60,21 +60,22 @@ if __name__ == '__main__':
                 tail = tail.next
         return head
 
+
     def getNum(x):
         ans = []
         while x:
             ans.append(x.val)
             x = x.next
         ans = ans[::-1]
-        total=0
+        total = 0
         for c in ans:
-            total=(total*10+c)
+            total = (total * 10 + c)
         return total
 
 
-    a = [1, 3, 4, 5,9]
-    b = [2, 3, 6, 7,8]
+    a = [1, 3, 4, 5, 9]
+    b = [2, 3, 6, 7, 8]
     A = makeList(a)
     B = makeList(b)
     C = Solution().add(A, B)
-    print "%d + %d = %d"%(getNum(A),getNum(B),getNum(C))
+    print "%d + %d = %d" % (getNum(A), getNum(B), getNum(C))
